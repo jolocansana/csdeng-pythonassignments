@@ -1,4 +1,5 @@
 import argparse
+import logging
 import json
 import csv
 from datetime import datetime
@@ -19,13 +20,18 @@ def main():
   extractedJson = []
   
   for item in json_data['imdata']:
-    extractedJson.append([
-      item['l1PhysIf']['attributes']['dn'],
-      item['l1PhysIf']['attributes']['descr'],
-      item['l1PhysIf']['attributes']['speed'],
-      item['l1PhysIf']['attributes']['mtu'],
-      item['l1PhysIf']['attributes']['modTs']
-    ])
+    try:
+      extractedJson.append([
+        item['l1PhysIf']['attributes']['dn'],
+        # item['l1PhysIf']['attributes']['sample'],
+        item['l1PhysIf']['attributes']['descr'],
+        item['l1PhysIf']['attributes']['speed'],
+        item['l1PhysIf']['attributes']['mtu'],
+        item['l1PhysIf']['attributes']['modTs']
+      ])
+    except:
+      logging.error("KeyError: Key doesn't exist")
+      break
 
   # Sorting by DN in descending order
   extractedJson.sort(reverse = True)
