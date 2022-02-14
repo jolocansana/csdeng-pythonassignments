@@ -28,6 +28,9 @@ def main():
   # print(error_rows / total_rows)
   if error_rows / total_rows > .2:
     print("The file will not be loaded as 20 percent of its contents contains errors")
+    
+  # Q: If in the future, the CSV File can be 100GB to 500GB in size, how would you read it using pandas?
+  # A: By adding the chunksize parameter to pandas read_csv method, you can read the file and process the information per block as to not consume too much memory.
 
 if __name__ == "__main__":
   main()
