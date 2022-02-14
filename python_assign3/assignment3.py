@@ -8,10 +8,10 @@ from dateutil import parser as dateparser
 import pytz
 
 def main():
+  # Getting json file through arguments
   parser = argparse.ArgumentParser(description='Args Parser')
   parser.add_argument('--json', type=str, required=True)
   args = parser.parse_args()
-
   json_file = args.json
 
   with open(json_file, 'r', encoding='utf-8') as jfile:
@@ -29,6 +29,7 @@ def main():
         item['l1PhysIf']['attributes']['mtu'],
         item['l1PhysIf']['attributes']['modTs']
       ])
+    # Exception handling for KeyError
     except:
       logging.error("KeyError: Key doesn't exist")
       break

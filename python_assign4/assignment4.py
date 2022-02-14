@@ -3,30 +3,31 @@ import pandas as pd
 def main():
   total_rows = error_rows = 0
 
+  # Load CSV
   data = pd.read_csv('data.csv')
   total_rows = len(data.index)
 
-  # TODO: should it only check rows nearby for duplicates?
-  # where is the data field
+  # Find duplicates and save to duped.csv
   data_dupes = data[data.duplicated()]
   error_rows += len(data_dupes.index)
   data_dupes.to_csv('duped.csv', index=False)
   # print(data_dupes)
 
+  # Find null/empty cells and save rows to nan.csv
   data_nan = data[data.isna().any(axis=1)]
   error_rows += len(data_nan.index)
   data_nan.to_csv('nan.csv', index=False)
   # print(data_nan)
 
-  # TODO: Check wrong data
-  # What is the constraints?
+  # Check wrong data
+  for x in data.index:
+    # Check set duration limit to 120
+    if data.loc[x, "Duration"] > 120:
+      data.loc[x, "Duration"] = 120
 
   # print(error_rows / total_rows)
   if error_rows / total_rows > .2:
     print("The file will not be loaded as 20 percent of its contents contains errors")
-
-  # TODO: How do you answer the last question?
-
 
 if __name__ == "__main__":
   main()
