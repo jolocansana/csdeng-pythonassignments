@@ -24,6 +24,7 @@ def main():
     # Check set duration limit to 120
     if data.loc[x, "Duration"] > 120:
       data.loc[x, "Duration"] = 120
+      error_rows += 1
 
   # print(error_rows / total_rows)
   if error_rows / total_rows > .2:
