@@ -1,0 +1,73 @@
+        sn        date   branch    pizza_sold   price  quantity      time     time_range  sales_amount  pizza_exists
+0        1  2015-12-11   Ibadan       Meatzaa  2000.0         5  08:00:01  Before 9:00am       10000.0          True
+1        2  2015-12-14    Ikoyi  Extravaganza  2000.0         4  08:00:02  Before 9:00am        8000.0          True
+2        3  2015-12-04    Lekki   BBQ Chicken  4000.0         5  08:00:04  Before 9:00am       20000.0          True
+3        4  2015-12-14    Ikoyi  Extravaganza  2000.0         1  08:00:07  Before 9:00am        2000.0          True
+4        5  2015-12-07  Gbagada       Meatzaa  2000.0         4  08:00:08  Before 9:00am        8000.0          True
+...    ...         ...      ...           ...     ...       ...       ...            ...           ...           ...
+5011  5000  2015-12-10    Ikoyi     Beef Suya  3000.0         5  09:42:33   After 9:00am       15000.0          True
+5012  5001  2015-12-11    Ikoyi         Bryan  3000.0         1  09:04:40   After 9:00am        3000.0         False
+5013  5002  2015-12-12    Lekki          Brix  4000.0         2  09:04:42   After 9:00am        8000.0         False
+5014  5003  2015-12-13    Lekki       Bernard  2000.0         4  09:04:43   After 9:00am        8000.0         False
+5015  5004  2015-12-04    Ikoyi     Bernadeth  3000.0         2  09:04:44   After 9:00am        6000.0         False
+
+
+
+        sn        date    branch      pizza_sold   price  quantity      time     time_range  sales_amount  pizza_exists
+0        1  2015-12-11    Ibadan         Meatzaa  2000.0         5  08:00:01  Before 9:00am       10000.0          True
+1        2  2015-12-14     Ikoyi    Extravaganza  2000.0         4  08:00:02  Before 9:00am        8000.0          True
+2        3  2015-12-04     Lekki     BBQ Chicken  4000.0         5  08:00:04  Before 9:00am       20000.0          True
+3        4  2015-12-14     Ikoyi    Extravaganza  2000.0         1  08:00:07  Before 9:00am        2000.0          True
+4        5  2015-12-07   Gbagada         Meatzaa  2000.0         4  08:00:08  Before 9:00am        8000.0          True
+...    ...         ...       ...             ...     ...       ...       ...            ...           ...           ...
+5007  4996  2015-12-13     Lekki       Margarita  4000.0         1  09:42:28   After 9:00am        4000.0          True
+5008  4997  2015-12-07  Surulere       Beef Suya  3000.0         5  09:42:31   After 9:00am       15000.0          True
+5009  4998  2015-12-07     Ikoyi  Pepperoni Suya  3000.0         4  09:42:32   After 9:00am       12000.0          True
+5010  4999  2015-12-08   Gbagada        Italiano  3000.0         1  09:42:32   After 9:00am        3000.0          True
+5011  5000  2015-12-10     Ikoyi       Beef Suya  3000.0         5  09:42:33   After 9:00am       15000.0          True
+
+
+
+********************************************
+********** SALES AMOUNT BY BRANCH **********
+********************************************
+branch
+Gbagada     9780000.0
+Ibadan      9451000.0
+Ikoyi       9835000.0
+Lekki       9333000.0
+Surulere    8971000.0
+Name: sales_amount, dtype: float64
+
+
+
+************************************************
+********** SALES AMOUNT BY PIZZA SOLD **********
+************************************************
+pizza_sold
+BBQ Chicken            3600000.0
+BBQ Philly Steak       3808000.0
+Beef Suya              2943000.0
+Chicken Bali           1778000.0
+Chicken Feast          1744000.0
+Chicken Legend         1766000.0
+Chicken Suya           3824000.0
+Extravaganza           1814000.0
+Hot Pepperoni Feast    4292000.0
+Hot Veggie             3800000.0
+Italiano               2955000.0
+Margarita              3484000.0
+Meatzaa                1676000.0
+Pepperoni Feast        3628000.0
+Pepperoni Suya         3231000.0
+Veggie Supreme         3027000.0
+Name: sales_amount, dtype: float64
+
+
+
+*************************************
+********** LOW SALES PIZZA **********
+*************************************
+BBQ Chicken sales: 3600000.0 target: 4320000.0
+Italiano sales: 2955000.0 target: 3250500.0000000005
+Margarita sales: 3484000.0 target: 3832400.0000000005
